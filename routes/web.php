@@ -29,7 +29,7 @@ Route::post('/contact', function() {
     $data = request(['name', 'email', 'subject', 'message']);
 
     
-\Illuminate\Support\Facades\Mail::to('ashki445@gmail.com')
+\Illuminate\Support\Facades\Mail::to('tahmasbiashkan@gmail.com')
 
 ->send(new App\Mail\ContactMe($data));
 
@@ -38,3 +38,7 @@ return redirect('/contact')
 ->with('flash', 'message sent succesfully');
 
 });
+Auth::routes();
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
