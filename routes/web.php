@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -27,6 +29,7 @@ Route::get('/contact', function() {
 
 Route::post('/contact', function() {
     $data = request(['name', 'email', 'subject', 'message']);
+  
 
     
 \Illuminate\Support\Facades\Mail::to('tahmasbiashkan@gmail.com')
@@ -41,4 +44,6 @@ return redirect('/contact')
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get("users", [UserCOntroller::class,'index']);
 

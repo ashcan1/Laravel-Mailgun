@@ -33,4 +33,9 @@ class ContactMe extends Mailable
   
          $this->view('emailTemplate');
     }
+    
+
 }
+
+
+
